@@ -9,13 +9,10 @@ import Foundation
 import SwiftUI
 
 class Coordinator: ObservableObject {
-    
     let serviceProvider: IServiceProvider
     let cartProvider: ICartProvider
     
     var cart: Cart
-    
-    @Published var isShowingCheckout: Bool = false
     
     init(serviceProvider: IServiceProvider, cartProvider: ICartProvider) {
         self.serviceProvider = serviceProvider
@@ -26,10 +23,7 @@ class Coordinator: ObservableObject {
     func listItemViewIntent() -> some View {
         let viewModel = ProductListViewModel(productService: serviceProvider.productService,
                                              cart: cart)
-        let view = ProductListView(viewModel: viewModel,
-                                   onCheckoutPressed: { [weak self] in
-            self?.isShowingCheckout = true
-        })
+        let view = ProductListView(viewModel: viewModel)
         return view
     }
     

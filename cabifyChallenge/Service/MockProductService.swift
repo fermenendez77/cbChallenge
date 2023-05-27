@@ -8,14 +8,10 @@
 import Foundation
 import Combine
 
-//class MockProductService {
-//
-//    func fetchProductList() -> AnyPublisher<[Product], MockProductError> {
-//        
-//    }
-//}
-
-enum MockProductError: Error {
-    case mock
+class MockProductService: IProductService {
+    func fetchProductList() -> AnyPublisher<[Product], Error> {
+        Just(mockProductsData)
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
+    }
 }
-

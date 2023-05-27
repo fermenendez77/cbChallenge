@@ -40,24 +40,25 @@ class ProductListViewModel: ObservableObject {
                     self?.showError = true
                 }
         }, receiveValue: { [weak self] products in
-            self?.productsItems = products.enumerated().map { position, product in
-                ProductListItemView(position: position,
-                                    name: product.name,
-                                    price: Price(value: product.price, currency: .eur))
-            }
-            self?.products = products
+            guard let self else { return }
+            self.productsItems = self.map(products: products)
+            self.products = products
         }).store(in: &disposal)
     }
     
-    func addProductToCart(position: Int) {
+    public func addProductToCart(position: Int) {
         let product = products[position]
         cart.addProduct(product: product)
         updateLabels()
     }
     
-    func processError() {
+    public func processError() {
         showError = false
         loadItems()
+    }
+    
+    public func reloadFromCart() {
+        updateLabels()
     }
     
     private func updateLabels() {
@@ -65,5 +66,12 @@ class ProductListViewModel: ObservableObject {
         totalAmount = cart.totalAmount
     }
     
-    
+    private func map(products: [Product]) -> [ProductListItemView] {
+        products.enumerated().map { position, product in
+            ProductListItemView(position: position,
+                                name: product.name,
+                                price: Price(value: product.price,
+                                             currency: .eur))
+        }
+    }
 }

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProductListView: View {
     
+    @EnvironmentObject var appState: AppState
     @StateObject var viewModel: ProductListViewModel
-    let onCheckoutPressed: () -> Void
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -31,7 +31,9 @@ struct ProductListView: View {
             if !viewModel.isLoading {
                 CheckoutPartialView(totalPrice: viewModel.totalPrice,
                                     totalAmount: viewModel.totalAmount,
-                                    buttonPressed: onCheckoutPressed)
+                                    buttonPressed: {
+                    appState.isShowingCheckout = true
+                })
                 
             }
         }
@@ -39,6 +41,12 @@ struct ProductListView: View {
         .onAppear {
             viewModel.loadItems()
         }
+        .onChange(of: appState.isShowingCheckout,
+                  perform: { value in
+            if !value {
+                viewModel.reloadFromCart()
+            }
+        })
         .alert("Error",
                isPresented: $viewModel.showError,
                actions: {
@@ -82,11 +90,10 @@ struct CheckoutPartialView: View {
 struct ContentView_Previews: PreviewProvider {
     
     static let viewModel = ProductListViewModel(
-        productService: ProductService(dataServiceProvider: HTTPService()),
+        productService: MockProductService(),
         cart: Cart())
     
     static var previews: some View {
-        ProductListView(viewModel: viewModel,
-                        onCheckoutPressed: {})
+        ProductListView(viewModel: viewModel)
     }
 }

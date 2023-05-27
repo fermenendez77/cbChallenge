@@ -12,7 +12,7 @@ class MockDataServiceProvider: DataServiceProvider {
     
     func get<T: Codable>(type: T.Type) -> AnyPublisher<T, Error> {
         [].publisher
-            .mapError { _ in MockProductError.mock }
+            .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
     }
 }

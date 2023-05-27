@@ -40,6 +40,8 @@
 		48D36A0E2A1BE3E0007ADD18 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D36A0D2A1BE3E0007ADD18 /* CheckoutView.swift */; };
 		48D36A102A1BEA88007ADD18 /* CheckoutProductCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D36A0F2A1BEA88007ADD18 /* CheckoutProductCellView.swift */; };
 		48D36A132A1D40DE007ADD18 /* CheckoutTotalAmountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D36A122A1D40DE007ADD18 /* CheckoutTotalAmountsView.swift */; };
+		48ED71BA2A220E0700A5D93E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ED71B92A220E0700A5D93E /* AppState.swift */; };
+		48ED71BC2A22161500A5D93E /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ED71BB2A22161500A5D93E /* AppView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		48D36A0D2A1BE3E0007ADD18 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		48D36A0F2A1BEA88007ADD18 /* CheckoutProductCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutProductCellView.swift; sourceTree = "<group>"; };
 		48D36A122A1D40DE007ADD18 /* CheckoutTotalAmountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTotalAmountsView.swift; sourceTree = "<group>"; };
+		48ED71B92A220E0700A5D93E /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		48ED71BB2A22161500A5D93E /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 		48D369A62A17DA7D007ADD18 /* cabifyChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				48ED71B82A220DEE00A5D93E /* App */,
 				48D36A082A1BE0F1007ADD18 /* Business */,
 				48D369EC2A191600007ADD18 /* Mocks */,
 				48D369E42A19078C007ADD18 /* Networking */,
@@ -153,8 +158,6 @@
 				48D369DC2A190431007ADD18 /* Model */,
 				48D369D72A17DC3A007ADD18 /* UI */,
 				48D369D12A17DAAC007ADD18 /* Scenes */,
-				48D369A72A17DA7D007ADD18 /* cabifyChallengeApp.swift */,
-				48D36A002A1A5A6F007ADD18 /* Coordinator.swift */,
 				48D369AB2A17DA7E007ADD18 /* Assets.xcassets */,
 				48D369AD2A17DA7E007ADD18 /* Preview Content */,
 			);
@@ -309,6 +312,17 @@
 			path = viewModel;
 			sourceTree = "<group>";
 		};
+		48ED71B82A220DEE00A5D93E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				48D369A72A17DA7D007ADD18 /* cabifyChallengeApp.swift */,
+				48D36A002A1A5A6F007ADD18 /* Coordinator.swift */,
+				48ED71B92A220E0700A5D93E /* AppState.swift */,
+				48ED71BB2A22161500A5D93E /* AppView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -459,9 +473,11 @@
 				48D36A032A1A5B78007ADD18 /* ServiceProvider.swift in Sources */,
 				48D36A132A1D40DE007ADD18 /* CheckoutTotalAmountsView.swift in Sources */,
 				48D369A82A17DA7D007ADD18 /* cabifyChallengeApp.swift in Sources */,
+				48ED71BC2A22161500A5D93E /* AppView.swift in Sources */,
 				48D369E92A190D4B007ADD18 /* ProductListViewModel.swift in Sources */,
 				48D36A0C2A1BE2A8007ADD18 /* CheckoutViewModel.swift in Sources */,
 				48D369E62A1907AE007ADD18 /* HTTPService.swift in Sources */,
+				48ED71BA2A220E0700A5D93E /* AppState.swift in Sources */,
 				48D369E12A1905F4007ADD18 /* ProductService.swift in Sources */,
 				48D369DB2A1900D4007ADD18 /* MainButton.swift in Sources */,
 			);
@@ -553,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -607,7 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -625,7 +641,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"cabifyChallenge/Preview Content\"";
-				DEVELOPMENT_TEAM = LUNGYV76TW;
+				DEVELOPMENT_TEAM = 2B7R8JQP9P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -654,7 +670,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"cabifyChallenge/Preview Content\"";
-				DEVELOPMENT_TEAM = LUNGYV76TW;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -761,7 +777,7 @@
 				48D369C72A17DA7E007ADD18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		48D369C82A17DA7E007ADD18 /* Build configuration list for PBXNativeTarget "cabifyChallenge" */ = {
 			isa = XCConfigurationList;
@@ -770,7 +786,7 @@
 				48D369CA2A17DA7E007ADD18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		48D369CB2A17DA7E007ADD18 /* Build configuration list for PBXNativeTarget "cabifyChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -779,7 +795,7 @@
 				48D369CD2A17DA7E007ADD18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		48D369CE2A17DA7E007ADD18 /* Build configuration list for PBXNativeTarget "cabifyChallengeUITests" */ = {
 			isa = XCConfigurationList;
@@ -788,7 +804,7 @@
 				48D369D02A17DA7E007ADD18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
